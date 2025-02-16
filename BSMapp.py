@@ -83,3 +83,5 @@ if uploaded_file is not None:
     b64 = base64.b64encode(csv).decode()  # Convert bytes to a string
     href = f'<a href="data:text/csv;base64,{b64}" target="_blank">Open CSV in a new tab</a>'
     st.markdown(href, unsafe_allow_html=True)
+
+#https://app-s-p-500-options-pricing-jkbphihcabmzccpr65ic5e.streamlit.app/
