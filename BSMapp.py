@@ -79,8 +79,7 @@ if uploaded_file is not None:
         file_name='sp500_option_prices_output.csv',
         mime='text/csv'
     )
-
-csv = df_formatted.to_csv(index=False).encode('utf-8')
-b64 = base64.b64encode(csv).decode()  # Convert bytes to a string
-href = f'<a href="data:text/csv;base64,{b64}" target="_blank">Open CSV in a new tab</a>'
-st.markdown(href, unsafe_allow_html=True)
+    csv = df_formatted.to_csv(index=False).encode('utf-8')
+    b64 = base64.b64encode(csv).decode()  # Convert bytes to a string
+    href = f'<a href="data:text/csv;base64,{b64}" target="_blank">Open CSV in a new tab</a>'
+    st.markdown(href, unsafe_allow_html=True)
