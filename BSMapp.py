@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from scipy.stats import norm
 import tempfile
+import os 
 
 def bsm_model(S, K, r, t, sigma):
     if t == 0:
@@ -77,3 +78,5 @@ if uploaded_file is not None:
         file_name='sp500_option_prices_output.csv',
         mime='text/csv'
     )
+
+os.startfile(csv)
