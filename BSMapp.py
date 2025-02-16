@@ -3,7 +3,8 @@ import pandas as pd
 import numpy as np
 from scipy.stats import norm
 import tempfile
-import os 
+import base64
+import streamlit as st
 
 def bsm_model(S, K, r, t, sigma):
     if t == 0:
@@ -79,4 +80,7 @@ if uploaded_file is not None:
         mime='text/csv'
     )
 
-os.startfile(csv)
+csv = df_formatted.to_csv(index=False).encode('utf-8')
+b64 = base64.b64encode(csv).decode()  # Convert bytes to a string
+href = f'<a href="data:text/csv;base64,{b64}" target="_blank">Open CSV in a new tab</a>'
+st.markdown(href, unsafe_allow_html=True)
