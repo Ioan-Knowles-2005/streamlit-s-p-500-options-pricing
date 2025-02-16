@@ -2,4 +2,3 @@ scipy
 pandas
 numpy
 streamlit
-base64
